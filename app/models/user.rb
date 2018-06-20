@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :clients
   has_many :contacts, through: :clients
-  has_many :appointments, through: :contacts
+  has_many :appointments
+  has_many :contacts, through: :appointments
 end

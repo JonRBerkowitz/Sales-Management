@@ -19,13 +19,14 @@ ActiveRecord::Schema.define(version: 2018_06_20_175858) do
     t.string "state"
     t.string "country"
     t.string "zip_code"
+    t.integer "client_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "appointments", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "client_id"
+    t.integer "contact_id"
     t.datetime "appointment_date"
     t.datetime "appointment_time"
     t.datetime "created_at", null: false
