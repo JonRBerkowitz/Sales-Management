@@ -1,0 +1,56 @@
+Sales Management Tool
+
+Models:
+  User
+    -has many clients
+    -has many contacts, through clients
+    -has many appointments
+    -can log in with secure pw
+    -can log in with linkedin
+
+  Client
+    -belongs to a user
+    -has many contacts
+
+  Contact
+    -belongs to a client
+    -has many appointments
+
+  Appointment
+    -belongs to contact
+    -belongs to user
+
+Views:
+  Login Page
+  Signup Page
+  User:
+    -show: acts as user's homepage, displays info about upcoming appointments as well as client info
+  Client:
+    -show: shows individual client info, along with info about each contact connected to client,
+    maybe highlight contacts with upcoming appointments
+  Contact:
+    -show: displays contact info, as well as info about upcoming appointments
+
+Migrations:
+  User:
+    -username
+    -first name
+    -last name
+    -password digest
+
+  Client:
+    -name (company)
+    -address, street, number, city, state, country
+    -user_id
+
+  Contact:
+    -first name
+    -last name
+    -phone number
+    -extension
+    -client_id
+
+  Appointment:
+    -contact_id
+    -user_id
+    -datetime
