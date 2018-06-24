@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_20_175858) do
+ActiveRecord::Schema.define(version: 2018_06_24_192859) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "street_number"
@@ -46,6 +46,11 @@ ActiveRecord::Schema.define(version: 2018_06_20_175858) do
     t.string "phone_number"
     t.string "extension"
     t.integer "client_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sessions", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
