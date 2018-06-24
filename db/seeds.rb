@@ -11,13 +11,13 @@ c = Client.create(name: "LPI")
 a.clients << b
 a.clients << c
 
-d = Address.create(street_name: "Harvard Ave")
+d = Address.create(street_number: "6", street_name: "Harvard Ave", city: "Boston", state: "MA", country: "USA", zip_code: "02155")
 e = Address.create(street_name: "Sesame St")
 
 b.address = d
 c.address = e
 
-f = Contact.create(first_name: "Billy")
+f = Contact.create(first_name: "Billy", last_name: "Mays", phone_number: "555-555-5555", extension: "123")
 b.contacts << f
 
 g = Appointment.create
