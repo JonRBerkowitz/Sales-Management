@@ -1,11 +1,23 @@
 <h1>Welcome <%= @user.first_name %></h1>
  All my Clients<br>
+ <ul>
+   <% @clients.each do |client| %>
+    <li> <%=client.name%> </li>
+   <% end %>
+ </ul>
+
  <a href="/clients/1">View Client 1</a>
  <a href="/clients/1/edit">Edit Client 1</a><br>
 
   Client 1 Contacts<br>
   <a href="/contacts/1">View Contact</a>
   <br>
+  <br>
+
+  <%= link_to "New Client", new_client_url %><br>
+  <%= link_to "New Contact", new_contact_url %><br>
+  <br>
+
 
   <%= link_to "Log Out", logout_path, method: :delete %>
 
