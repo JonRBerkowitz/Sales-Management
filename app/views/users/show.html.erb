@@ -10,6 +10,12 @@
  <a href="/clients/1/edit">Edit Client 1</a><br>
 
   Client 1 Contacts<br>
+
+  <ul>
+    <% @contacts.each do |contact| %>
+     <li> <%=contact.first_name%> <%=contact.last_name%> / <%=contact.client.name%></li>
+    <% end %>
+  </ul>
   <a href="/contacts/1">View Contact</a>
   <br>
   <br>
