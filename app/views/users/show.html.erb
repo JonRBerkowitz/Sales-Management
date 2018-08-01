@@ -2,12 +2,9 @@
  All my Clients<br>
  <ul>
    <% @clients.each do |client| %>
-    <li> <%=client.name%> </li>
+    <li> <%=link_to client.name, client_path(client)%> (<%= link_to 'Edit', edit_client_path(client)%>)</li>
    <% end %>
  </ul>
-
- <a href="/clients/1">View Client 1</a>
- <a href="/clients/1/edit">Edit Client 1</a><br>
 
   Client 1 Contacts<br>
 
