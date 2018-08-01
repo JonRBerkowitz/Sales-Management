@@ -1,2 +1,8 @@
 <h1>Edit <h1><%= @client.name %></h1>
 </h1>
+
+<%= form_for @client do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name , value: @client.name %>
+  <%= f.submit %>
+<% end %>
