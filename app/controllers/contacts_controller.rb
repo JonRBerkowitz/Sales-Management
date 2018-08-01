@@ -17,13 +17,18 @@ class ContactsController < ApplicationController
     end
   end
 
+  def edit
+    @contact = Contact.find(params[:id])
+  end
+
   def show
+    @contact = Contact.find(params[:id])
   end
 
   private
 
   def contact_params
-    params.require(:contact).permit(:first_name, :last_name, :client_id)
+    params.require(:contact).permit(:first_name, :last_name, :phone_number, :extension, :client_id)
   end
 
 end
