@@ -3,19 +3,14 @@
  <ul>
    <% @clients.each do |client| %>
     <li> <%=link_to client.name, client_path(client)%> (<%= link_to 'Edit', edit_client_path(client)%>)</li>
+      <ul>
+      <% client.contacts.each do |contact| %>
+        <li> <%= link_to contact.first_name, contact_path(contact) %> (<%= link_to 'Edit', edit_contact_path(contact)%>)</li>
+      <% end %>
+    </ul><br>
    <% end %>
  </ul>
 
-  Client 1 Contacts<br>
-
-  <ul>
-    <% @contacts.each do |contact| %>
-     <li> <%=contact.first_name%> <%=contact.last_name%> / <%=contact.client.name%></li>
-    <% end %>
-  </ul>
-  <a href="/contacts/1">View Contact</a>
-  <br>
-  <br>
 
   <%= link_to "New Client", new_client_url %><br>
   <%= link_to "New Contact", new_contact_url %><br>
