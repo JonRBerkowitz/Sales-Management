@@ -4,7 +4,7 @@ class ClientsController < ApplicationController
     if params[:user_id]
       @clients = User.find(params[:user_id]).clients
     else
-      @clients = Client.all
+      redirect_to current_user
     end
   end
 
@@ -38,7 +38,11 @@ class ClientsController < ApplicationController
   end
 
   def show
+    @user = current_user
     @client = Client.find(params[:id])
+    unless current_user.clients.include?(@client)
+      redirect_to user_clients_path
+    end
   end
 
   private
