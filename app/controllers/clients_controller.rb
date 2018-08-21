@@ -1,6 +1,11 @@
 class ClientsController < ApplicationController
 
   def index
+    if params[:user_id]
+      @clients = User.find(params[:user_id]).clients
+    else
+      @clients = Client.all
+    end
   end
 
   def new
