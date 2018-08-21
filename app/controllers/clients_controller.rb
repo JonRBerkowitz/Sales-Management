@@ -15,7 +15,7 @@ class ClientsController < ApplicationController
       @user.clients << @client
       redirect_to @user
     else
-      redirect_to '/new'
+      redirect_to new_client_path
     end
   end
 

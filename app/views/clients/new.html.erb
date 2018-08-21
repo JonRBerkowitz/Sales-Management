@@ -1,7 +1,15 @@
 <h1>Create new client</h1>
 
+
+
 <%= form_for @client do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.submit %>
 <% end %>
+
+<% if @client.errors.any? %>
+    <h2>
+      ERROR
+    </h2>
+  <% end %>

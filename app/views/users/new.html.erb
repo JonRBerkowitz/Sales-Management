@@ -11,3 +11,13 @@
   <%= f.text_field :last_name %><br><br>
   <%= f.submit %>
 <% end %>
+
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li style="color: red; font-size: 14px;"><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
