@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
-    @clients = @user.clients
+    @clients = @user.clients.send(params[:priority].downcase)
     @contacts = @user.contacts
   end
 

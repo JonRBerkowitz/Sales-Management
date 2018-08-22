@@ -1,5 +1,11 @@
 <h1>Welcome <%= @user.first_name %></h1>
- All my Clients<br>
+
+ Filter Clients by Priority:<br>
+ <%= form_tag action="user_path", :method => 'get' do %>
+   <%= select_tag "priority", options_for_select([ "ALL", "HIGH", "MEDIUM", "LOW" ], params[:priority]) %><br>
+   <%= submit_tag "Filter"%>
+ <% end %>
+
  <ul>
    <% @clients.each do |client| %>
     <li> <%=link_to client.name, user_client_path(current_user, client)%> (<%= link_to 'Edit', edit_client_path(client)%>)</li>
