@@ -19,7 +19,3 @@ c.address = e
 
 f = Contact.create(first_name: "Billy", last_name: "Mays", phone_number: "555-555-5555", extension: "123")
 b.contacts << f
-
-g = Appointment.create
-a.appointments << g
-f.appointments << g

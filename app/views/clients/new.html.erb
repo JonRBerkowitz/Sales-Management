@@ -1,10 +1,10 @@
 <h1>Create new client</h1>
 
-
-
 <%= form_for @client do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
+  <%= f.label :priority %><br><br>
+  <%= f.select(:priority, ["HIGH", "MEDIUM", "LOW"], prompt: true) %><br><br>
   <%= f.submit %>
 <% end %>
 

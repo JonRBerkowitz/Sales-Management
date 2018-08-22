@@ -2,7 +2,7 @@
  All my Clients<br>
  <ul>
    <% @clients.each do |client| %>
-    <li> <%=link_to client.name, client_path(client)%> (<%= link_to 'Edit', edit_client_path(client)%>)</li>
+    <li> <%=link_to client.name, user_client_path(current_user, client)%> (<%= link_to 'Edit', edit_client_path(client)%>)</li>
       <ul>
       <% client.contacts.each do |contact| %>
         <li> <%= link_to contact.first_name, contact_path(contact) %> (<%= link_to 'Edit', edit_contact_path(contact)%>)</li>

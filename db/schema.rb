@@ -24,17 +24,9 @@ ActiveRecord::Schema.define(version: 2018_06_24_192859) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "appointments", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "contact_id"
-    t.datetime "appointment_date"
-    t.datetime "appointment_time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "clients", force: :cascade do |t|
     t.string "name"
+    t.string "priority"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
