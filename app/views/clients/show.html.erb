@@ -1,1 +1,5 @@
 <h1><%= @client.name %></h1>
+
+<% @client.contacts.each do |contact| %>
+  <%= link_to contact.first_name, contact_path(contact) %>
+<% end %>

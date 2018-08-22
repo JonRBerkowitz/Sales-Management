@@ -38,7 +38,6 @@ class ClientsController < ApplicationController
   end
 
   def show
-    @user = current_user
     @client = Client.find(params[:id])
     unless current_user.clients.include?(@client)
       redirect_to user_clients_path
